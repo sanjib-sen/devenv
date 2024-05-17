@@ -31,3 +31,4 @@ Run your own development environment within docker and ssh to it from anywhere
     ```sh
     ssh -p <SSH_PORT/8654> <USER>:@<HOST>
     ```
+9. Feel Free to modify the Dockerfile and devenvironment.sh to suit your needs.
