@@ -17,7 +17,7 @@ Run your own development environment within docker and ssh to it from anywhere
 4. Add your username and password for the dev container in the .env file. (Mandatory)
     ```.env
     USER=<your own username>
-    PASSWORD=<your own passwor>
+    PASSWORD=<your own password>
     SSH_PORT=<the port you want to expose for ssh, default:8654>
     ```
 5. (Optional): Add your own .zshrc / .p10k.zsh file in the .env
