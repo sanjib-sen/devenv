@@ -6,17 +6,15 @@ services:
       args:
           USER: ${USER}
           PASSWORD: ${PASSWORD}
-          SSH_PORT: ${SSH_PORT:-8654}
           P10K_FILE_URL: ${P10K_FILE_URL:-https://raw.githubusercontent.com/romkatv/powerlevel10k/master/config/p10k-rainbow.zsh}
-
           ZSHRC_FILE_URL: ${ZSHRC_FILE_URL:-https://raw.githubusercontent.com/sanjib-sen/devenv/main/dotfiles/.zshrc}
     volumes:
         - devenvdata:/home/${USER}
     stdin_open: true
     tty: true
     ports:
-        - '${SSH_PORT:-8654}:22/tcp'
+        - '${SSH_PORT:-23}:22/tcp'
         # If you need to open more ports, uncomment this
-        # - '3000-3999:3000-3999'
+        - '5170-5199:5170-5199'
 volumes:
   devenvdata:
