@@ -20,15 +20,16 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
     PASSWORD=<your own password>
     SSH_PORT=<the port you want to expose for ssh, default:8654>
     ```
-5. (Optional): Add your own .zshrc / .p10k.zsh file in the .env
-6. (Optional): Modify `devenvironment.sh` file to add your own build tools, compilers, dotfiles, etc.
+5. (Optional): Add your own .zshrc / .p10k.zsh / neovim config file/repo in the .env
+6. (Optional): Expose your desired ports with `EXPOSE_EXTERNAL_PORT_RANGE` `EXPOSE_INTERNAL_PORT_RANGE`
+7. (Optional): Modify `devenvironment.sh` file to add your own build tools, compilers, dotfiles, etc.
     For convenience, I have added commands for common languages and build tools. Uncomment to use them or add your own.
-7. RUN using docker compose
+8. RUN using docker compose
     ```sh
     docker compose up -d
     ```
-8. Now use it with ssh
+9. Now use it with ssh
     ```sh
     ssh -p <SSH_PORT/8654> <USER>:@<HOST>
     ```
-9. Feel Free to modify the Dockerfile and devenvironment.sh to suit your needs.
+10. Feel Free to modify the Dockerfile and devenvironment.sh to suit your needs.
