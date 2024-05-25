@@ -6,7 +6,7 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
 ## Instructions
 
 1. Make sure you have docker installed
-2. Git clone this
+2. Git clone this repository
     ```sh
     git clone https://github.com/sanjib-sen/devenv
     ```
@@ -18,12 +18,12 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
     ```.env
     USER=<your own username>
     PASSWORD=<your own password>
-    SSH_PORT=<the port you want to expose for ssh, default:8654>
+    SSH_PORT=<the port you want to expose for ssh, default:23>
     ```
-5. (Optional): Add your own .zshrc / .p10k.zsh / neovim config file/repo in the .env
-6. (Optional): Expose your desired ports with `EXPOSE_EXTERNAL_PORT_RANGE` `EXPOSE_INTERNAL_PORT_RANGE`
+5. (Optional): Add/Modify your own .zshrc / .p10k.zsh / neovim config file/repo in the .env
+6. (Optional): Expose your desired ports with `EXPOSE_EXTERNAL_PORT_RANGE` and `EXPOSE_INTERNAL_PORT_RANGE`
 7. (Optional): Modify `devenvironment.sh` file to add your own build tools, compilers, dotfiles, etc.
-    For convenience, I have added commands for common languages and build tools. Uncomment to use them or add your own.
+    For better understanding, I have added the commands to install the rust toolchain. Uncomment to use it or add your own
 8. RUN using docker compose
     ```sh
     docker compose up -d
@@ -32,4 +32,4 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
     ```sh
     ssh -p <SSH_PORT/8654> <USER>:@<HOST>
     ```
-10. Feel Free to modify the Dockerfile and devenvironment.sh to suit your needs.
+10. Feel Free to Fork and modify the source code to suit your needs
