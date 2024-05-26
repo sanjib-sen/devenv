@@ -4,12 +4,16 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get upgrade --yes && \
-    apt-get install --yes ca-certificates wget software-properties-common
+    apt-get install --yes software-properties-common
 RUN add-apt-repository ppa:neovim-ppa/unstable 
 
 RUN apt-get update && \
     apt-get install --yes \
     docker.io \
+    wget \
+    ripgrep \
+    xclip \
+    ca-certificates \
     docker-compose-v2 \
     neovim \
     curl \
@@ -27,8 +31,7 @@ RUN apt-get update && \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
-    locale-gen
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8

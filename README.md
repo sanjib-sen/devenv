@@ -1,6 +1,6 @@
 # devenv
 
-Run your own development environment within docker and ssh to it from anywhere
+Create and run your own development environment within docker and ssh to it from anywhere.
 With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, fast-syntax-highlighting and more.
 
 ## Instructions
