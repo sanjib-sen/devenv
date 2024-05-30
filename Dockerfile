@@ -71,4 +71,5 @@ RUN sudo chmod +x devenvironment.sh && ./devenvironment.sh
 EXPOSE 22/tcp
 EXPOSE ${EXPOSE_INTERNAL_PORT_RANGE}
 RUN source ~/.zshrc
+RUN sudo rm -rf .zcompdump* .wget-hsts .sudo_as_admin_successful .bashrc .bash_logout .bash_history devenvironment.sh
 ENTRYPOINT sudo service ssh start && echo "$(service ssh status)" && nohup sudo dockerd >/dev/null 2>&1 && tail -f /dev/null
