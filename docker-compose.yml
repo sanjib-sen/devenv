@@ -1,6 +1,6 @@
 services:
-  devenv:
-    container_name: devenv
+  ${ENVIRONMENT_NAME}:
+    container_name: ${ENVIRONMENT_NAME}
     build:
       context: .
       args:
@@ -11,7 +11,7 @@ services:
           NEOVIM_CONFIG_REPO_URL: ${NEOVIM_CONFIG_REPO_URL:-https://github.com/nvim-lua/kickstart.nvim.git}
           EXPOSE_INTERNAL_PORT_RANGE: ${EXPOSE_INTERNAL_PORT_RANGE:-5170-5199}
     volumes:
-        - devenvdata:/home/${USER}
+        - ${ENVIRONMENT_NAME}data:/home/${USER}
     stdin_open: true
     tty: true
     privileged: true
@@ -20,4 +20,4 @@ services:
         # If you need to open more ports, uncomment this
         - '${EXPOSE_EXTERNAL_PORT_RANGE:-5170-5199}:${EXPOSE_INTERNAL_PORT_RANGE:-5170-5199}'
 volumes:
-  devenvdata:
+  ${ENVIRONMENT_NAME}data:
