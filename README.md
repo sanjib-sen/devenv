@@ -19,6 +19,7 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
     USER=<your own username>
     PASSWORD=<your own password>
     SSH_PORT=<the port you want to expose for ssh, default:23>
+    ENVIRONMENT_NAME=<Set an environment name to avoid container/volume name duplication, default:devenv>
     ```
 5. (Optional): Add/Modify your own .zshrc / .p10k.zsh / neovim config file/repo in the .env
 6. (Optional): Expose your desired ports with `EXPOSE_EXTERNAL_PORT_RANGE` and `EXPOSE_INTERNAL_PORT_RANGE`
@@ -30,6 +31,6 @@ With neovim (kickstart.nvim), tmux, fzf, ohmyzsh, zsh-autosuggestions, fzf-tab, 
     ```
 9. Now use it with ssh
     ```sh
-    ssh -p <SSH_PORT/8654> <USER>:@<HOST>
+    ssh -p <SSH_PORT> <USER>:@<HOST>
     ```
 10. Feel Free to Fork and modify the source code to suit your needs
